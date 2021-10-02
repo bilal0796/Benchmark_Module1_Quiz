@@ -12,7 +12,7 @@ let questions = [
         3: "Central Processor Unit",
         4:"Central Processing Unit",
       },
-      wrongAnswers: ["Central Process Unit","Computer Personal Unit","Central Processor Unit"],
+      wrongAnswers: {a: "Central Process Unit",b: "Computer Personal Unit",c: "Central Processor Unit",},
     },
     {
       category: "Science: Computers",
@@ -22,6 +22,7 @@ let questions = [
         "Q: In the programming language Java, which of these keywords would you put on a variable to make sure it doesn&#039;t get modified?",
       correct_answer: "Final",
       MultipleOptions: {1:"Static", 2: "Private", 3: "Public", 4:"Final",},
+      wrongAnswers: {a: "Static",b: "Private",c: "Public",},
     },
     // {
     //   category: "Science: Computers",
@@ -48,6 +49,7 @@ let questions = [
         "Q: What is the most preferred image format used for logos in the Wikimedia database?",
       correct_answer: ".svg",
       MultipleOptions: {1: ".png", 2: ".jpeg", 3: ".gif",4:".svg",},
+      wrongAnswers: {a: ",png",b: ".jpeg",c: ".gif",},
     },
     {
       category: "Science: Computers",
@@ -61,6 +63,7 @@ let questions = [
         3: "Computer Style Sheet",
         4: "Cascading Style Sheet",
       },
+      wrongAnswers: {a: "Counter Strike: Source",b: "Corrective Style Sheet",c: "Computer Style Sheet",},
     },
     {
       category: "Science: Computers",
@@ -75,6 +78,7 @@ let questions = [
         3: "Marshmallow",
         4: "Nougat",
       },
+      wrongAnswers: {a: "Ice Cream Sandwich",b: "Jelly Bean",c: "Marshmallow",},
     },
     {
       category: "Science: Computers",
@@ -83,6 +87,7 @@ let questions = [
       question: "Q: On Twitter, what is the character limit for a Tweet?",
       correct_answer: "140",
       MultipleOptions: {1: "120", 2: "160", 3: "100",4:"140"},
+      wrongAnswers: {a: "120",b: "160",c: "100",},
     },
     // {
     //    category: "Science: Computers",
@@ -100,6 +105,7 @@ let questions = [
         "Q: Which programming language shares its name with an island in Indonesia?",
       correct_answer: "Java",
       MultipleOptions: {1:"Python", 2:"C", 3:"Jakarta",4:"Java"},
+      wrongAnswers: {a:"Python", b:"C", c:"Jakarta",},
     },
   ];
 //   let questionscontainerNode = document.getElementById("QuestionsContainer")
@@ -127,19 +133,28 @@ let questions = [
             gettheclickeddata = e.target.innerText
             for(let l=0; l<9; l++){
                 if(gettheclickeddata===questions[l].correct_answer){
-                    alert("right answer")
+                    alert("Good Job!")
                     break
                 }
-                else if(gettheclickeddata!==questions[l].correct_answer){
-                    alert("Wrong answer")
+                else if(gettheclickeddata===questions[l].wrongAnswers.a){
+                    alert("Sorry, wrong answer!")
                     break
                 }
+                else if(gettheclickeddata===questions[l].wrongAnswers.b){
+                  alert("Sorry, wrong answer!")
+                  break
+                }
+                else if(gettheclickeddata===questions[l].wrongAnswers.c){
+                  alert("Sorry, wrong answer!")
+                  break
+                }
+
+              }
             }
             
         }
         //questionscontainerNode.appendChild(optionsvariable)
 
-      }
   }
 
 window.onload = function () {
