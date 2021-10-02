@@ -1,3 +1,4 @@
+
 let questions = [
     {
       category: "Science: Computers",
@@ -11,6 +12,7 @@ let questions = [
         3: "Central Processor Unit",
         4:"Central Processing Unit",
       },
+      wrongAnswers: ["Central Process Unit","Computer Personal Unit","Central Processor Unit"],
     },
     {
       category: "Science: Computers",
@@ -102,23 +104,38 @@ let questions = [
   ];
 //   let questionscontainerNode = document.getElementById("QuestionsContainer")
   const displayquestions = function(){
+    let gettheclickeddata
     let questionscontainerNode = document.getElementById("QuestionsContainer")
       for(let i = 0; i <= 9; i++){
         let inputquestions = document.createElement("div")
         inputquestions.classList.add("question")
         inputquestions.innerText = questions[i].question
         questionscontainerNode.appendChild(inputquestions)
-        for(let x=1;x<=4;x++){
+        for(let x=1; x <= 4; x++){
             let optionsvariableNode = document.getElementsByClassName("question")
             // let optionsvariable= document.createElement("div")
             // optionsvariable.classList.add("options") = questions[i].MultipleOptions[x]
             // questionscontainerNode.appendChild(optionsvariable)
-            let optionsvariable=document.createElement("button")
+            let optionsvariable = document.createElement("button")
             optionsvariable.innerHTML = questions[i].MultipleOptions[x]
-            optionsvariable.addEventListener("click", function () {
-                alert("Button is clicked");
-              })
+            // optionsvariable.addEventListener("click", function () {
+            //     alert("Button is clicked");
+            //   })
             questionscontainerNode.appendChild(optionsvariable)
+        }
+        window.onclick = e => {
+            gettheclickeddata = e.target.innerText
+            for(let l=0; l<9; l++){
+                if(gettheclickeddata===questions[l].correct_answer){
+                    alert("right answer")
+                    break
+                }
+                else if(gettheclickeddata!==questions[l].correct_answer){
+                    alert("Wrong answer")
+                    break
+                }
+            }
+            
         }
         //questionscontainerNode.appendChild(optionsvariable)
 
