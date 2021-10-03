@@ -14,7 +14,6 @@ div {
     animation: example 5s infinite;
   }
   
-  
   @keyframes example {
     0%   {background-color:red; left:400px; top:100px;}
     25%  {background-color:yellow; left:600px; top:100px;}
