@@ -108,11 +108,8 @@ let questions = [
       wrongAnswers: {a:"Python", b:"C", c:"Jakarta",},
     },
   ];
-//   let questionscontainerNode = document.getElementById("QuestionsContainer")
+
   const displayquestions = function(){
-    // let changetitle=document.getElementsByTagName("h1")
-    // changetitle.innerText="Good Lcuk with the game"
-    // document.body.appendChild(changetitle)
     let gettheclickeddata
     let questionscontainerNode = document.getElementById("QuestionsContainer")
       for(let i = 0; i <= 9; i++){
@@ -122,21 +119,15 @@ let questions = [
         questionscontainerNode.appendChild(inputquestions)
         for(let x=1; x <= 4; x++){
             let optionsvariableNode = document.getElementsByClassName("question")
-            // let optionsvariable= document.createElement("div")
-            // optionsvariable.classList.add("options") = questions[i].MultipleOptions[x]
-            // questionscontainerNode.appendChild(optionsvariable)
             let optionsvariable = document.createElement("button")
             optionsvariable.innerHTML = questions[i].MultipleOptions[x]
-            // optionsvariable.addEventListener("click", function () {
-            //     alert("Button is clicked");
-            //   })
             questionscontainerNode.appendChild(optionsvariable)
         }
         window.onclick = e => {
             gettheclickeddata = e.target.innerText
             for(let l=0; l<9; l++){
                 if(gettheclickeddata===questions[l].correct_answer){
-                    alert("Good Job!")
+                    window.location.href="result.html"
                     break
                 }
                 else if(gettheclickeddata===questions[l].wrongAnswers.a){
@@ -156,25 +147,8 @@ let questions = [
             }
             
         }
-        //questionscontainerNode.appendChild(optionsvariable)
-
   }
 
-// window.onload = function () {
-//     displayquestions()
-//     // HINTS
-//     // IF YOU ARE DISPLAYING ALL THE QUESTIONS AT ONCE:
-//     // For each question, create a container for wrapping it; then create a radio button
-//     // https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/radio
-//     // with, as options, both the correct answer and the incorrect ones
-//     // (you'll probably need to google how to get the value from a radio button in JS to evaluate the final score)
-//     //
-//     // IF YOU ARE DISPLAYING ONE QUESTION AT A TIME
-//     // Display the first question with the text and the radio buttons
-//     // when the user selects an answer, pick the next question from the array and replace the old one with it
-//     // saving the user's choice in a variable
-    
-//       // How to calculate the result? You can do it in 2 ways:
-//       // If you are presenting all the questions together, just take all the radio buttons and check if the selected answer === correct_answer
-//       // If you are presenting one question at a time, just add one point or not to the user score if the selected answer === correct_answer
-// }
+window.onload = function () {
+    displayquestions()
+}

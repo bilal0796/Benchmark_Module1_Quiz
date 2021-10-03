@@ -1,38 +1,38 @@
 body{
-    background-color: black;
-    color: rgb(255, 136, 24);
+    background-image: radial-gradient(rgb(38, 255, 0),rgb(251, 255, 0));
+    color: rgb(234, 0, 255);
     font-family: Architects Daughter ;
     text-align:left;
-    max-width:fit-content;
-    margin: 30 auto;
-    font-family: Architects Daughter ;
+}
+h1{
+    text-align: center;
+    font-size:40px;
+    font-family: Frijole;
+    position: relative;
+    animation: mymove 1s reverse;
+    
 }
 .question{
-    /* background-color: rgb(66, 65, 65); */
     font-family: Architects Daughter ;
-    color: rgb(255, 136, 24);
+    color: rgb(234, 0, 255);
+    font-weight: bolder;
     display:contents;
     width:fit-content;
     padding-top: 10px;
     min-height: 40px;
     text-align: left;
-    
     font-size: 20px;
-    /* border-color: rgb(255, 136, 24);
-    border-style: solid;
-    border-width:thin; */
-    /* margin: 1px;
-    border-style: groove;
-    border-radius: 8px; */
     transition: .3s ease-in-out;
 }
 button:hover{
-    background-color:rgb(187, 25, 25);
+    background-color:rgb(38, 255, 0);
+    color: rgb(234, 0, 255);
+    cursor:pointer;
 }
 button{
-
     font-weight: bolder;
-    color: rgb(255, 136, 24);
+    font-weight: bolder;
+    color: rgb(157, 255, 0);
     display:list-item;
     width:auto;
     padding-top: 10px;
@@ -43,8 +43,15 @@ button{
     border-color: rgb(255, 136, 24);
     border-style: solid;
     border-width:thin;
-    margin: 1px;
-    border-style: groove;
-    border-radius: 4px; 
-    background-color: rgb(66, 65, 65);
+    margin: 15px;
+    border-style:hidden;
+    border-radius: 20px; 
+    background-color: rgb(234, 0, 255);
+    font-family: Architects Daughter ;
+    position: relative;
+    animation: mymove 1s reverse;
 }
+@keyframes mymove {
+    from {left: 0px;}
+    to {left: 20px;}
+  }
