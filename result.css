@@ -1,23 +1,39 @@
 body{
     font-family: frijole;
     font-size: 120px;
-    background-image: radial-gradient(rgb(38, 255, 0),rgb(251, 255, 0),rgb(228, 121, 228));
+    background-image: radial-gradient(rgb(38, 255, 0),rgb(251, 255, 0));
 }
-div {
+#correct {
     color: seashell;
     text-align:center;
-    width: 500px;;  
+    width: 700px;;  
     height: 500px;;
     background-color: red;
     position:absolute;
     animation-name: example;
     animation: example 5s infinite;
   }
+  .wrong{
+      color: seashell;
+      text-align:center;
+      width: 700px;;  
+      height: 500px;;
+      background-color: red;
+      position:absolute;
+      animation-name: example;
+      animation: example 5s infinite;
+  }
   
   @keyframes example {
-    0%   {background-color:red; left:400px; top:100px;}
+    0%   {background-color:red; left:300px; top:100px;}
     25%  {background-color:yellow; left:600px; top:100px;}
     50%  {background-color:rgb(217, 0, 255); left:600px; top:200px;}
-    75%  {background-color:green; left:400px; top:200px;}
-    100% {background-color:rgb(255, 123, 0); left:400px; top:100px;}
+    75%  {background-color:green; left:300px; top:200px;}
+    100% {background-color:rgb(255, 123, 0); left:300px; top:100px;}
   }
+ button{
+   background-image: radial-gradient(rgb(38, 255, 0),rgb(251, 255, 0),rgb(228, 121, 228));
+   font-family: frijole;
+   max-height: 20px;
+ }
+ 

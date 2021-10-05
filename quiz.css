@@ -1,15 +1,20 @@
 body{
-    background-image: radial-gradient(rgb(38, 255, 0),rgb(251, 255, 0));
+    background-image: radial-gradient(rgba(162, 250, 146, 0.856),rgb(237, 240, 96),yellow);
     color: rgb(234, 0, 255);
     font-family: Architects Daughter ;
     text-align:left;
 }
 h1{
-    text-align: center;
+    /* text-align: center;
     font-size:40px;
     font-family: Frijole;
     position: relative;
-    animation: mymove 1s reverse;
+    animation: mymove 1s reverse; */
+    text-align: center;    
+    font-size: 40px;
+    background: -webkit-linear-gradient(rgb(156, 10, 214), rgb(94, 255, 1));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
     
 }
 .question{

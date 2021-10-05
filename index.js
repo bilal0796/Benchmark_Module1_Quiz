@@ -1,4 +1,6 @@
 
+let rightones=[0,0,0,0,0,0,0]
+let wrongone=[0,0,0,0,0,0,0]
 let questions = [
     {
       category: "Science: Computers",
@@ -125,29 +127,58 @@ let questions = [
         }
         window.onclick = e => {
             gettheclickeddata = e.target.innerText
-            for(let l=0; l<9; l++){
+            for(let l=0; l<7; l++){
                 if(gettheclickeddata===questions[l].correct_answer){
-                    window.location.href="result.html"
+                  rightones[l]=1;//rightones.push(rightones[l]+1)  
+                  wrongone[l]=0;
+                  // window.location.href="result.html"
                     break
                 }
                 else if(gettheclickeddata===questions[l].wrongAnswers.a){
-                    alert("Sorry, wrong answer!")
+                    // alert("Sorry, wrong answer!")
+                    wrongone[l]=1;//wrongone.push(wrongone[l]+1)
+                    rightones[l]=0;
                     break
                 }
                 else if(gettheclickeddata===questions[l].wrongAnswers.b){
-                  alert("Sorry, wrong answer!")
+                  // alert("Sorry, wrong answer!")
+                  wrongone[l]=1;//wrongone.push(wrongone[l]+1)
+                  rightones[l]=0;
                   break
                 }
                 else if(gettheclickeddata===questions[l].wrongAnswers.c){
-                  alert("Sorry, wrong answer!")
+                  // alert("Sorry, wrong answer!")
+                  wrongone[l]=1;//wrongone.push(wrongone[l]+1)
+                  rightones[l]=0
                   break
                 }
-
               }
             }
             
+            
         }
+        return rightones,wrongone
   }
+  let sum_array = function(arr_in){
+    let sumres = 0;
+    for(let loop=0; loop<arr_in.length; loop++){
+      sumres = sumres + arr_in[loop];
+    }
+    return sumres;
+  }
+  let result=function(){
+    
+    // for(let loop=0; loop<rightones.length; loop++){
+    //   alert(wrongone[loop]);
+    // }
+    alert("You had:\n"+sum_array(rightones)+" : correct answers\n"+sum_array(wrongone)+" : wrong answers")
+    //alert("Q1: "+(rightones[0].toString=="1")+"Q2: "+(rightones[1].toString=="1")+", Q3: "+rightones[2].toString=="1"+", Q4: "+rightones[3].toString=="1"+", Q5: "+rightones[4].toString=="1"+", Q6: "+rightones[5].toString=="1"+", Q7: "+rightones[6].toString=="1")
+    rightones=0
+    wrongone=0
+  }
+  // const result=function(){
+  //   if()
+  // }
 
 window.onload = function () {
     displayquestions()
